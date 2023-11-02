@@ -47,8 +47,22 @@ function main(){
 
     }
     
-    const showResponseMessage = (message = 'Check your internet connection')=>{
-        alert(message);
+    const showResponseMessage = (message)=>{
+        const listBookElement = document.querySelector('.movie-container');
+        listBookElement.innerHTML='';
+        listBookElement.innerHTML+=`
+        <style>
+            .movie-container > .placeholder{
+                font-weight: lighter;
+                color: rgba(0, 0, 0, 0.5);
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+        </style>
+        <h2 class="placeholder">${message}</h2>
+        `;
     }
     
     document.addEventListener('DOMContentLoaded',function(){
